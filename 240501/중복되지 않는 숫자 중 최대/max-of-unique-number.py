@@ -7,9 +7,8 @@ num_list = []
 for i in num:
     if num.count(i) == 1:
         num_list.append(i)
-
-
+        
 if len(num_list) == 0:
     print(-1)
 else:
-    print(max(num))
+    print(max(num_list))
