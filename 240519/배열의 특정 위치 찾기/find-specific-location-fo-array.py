@@ -4,12 +4,15 @@ count = 0
 
 nums = list(map(int, input().split()))
 
-for i in range(1, len(nums)):
-    if i % 2 == 1:
+for i in range(len(nums)):
+    if i == 0:
+        pass
+                        
+    if (i+1) % 2 == 0:
         even_sum += nums[i]
 
-    if i % 2 == 0:
+    if (i+1) % 3 == 0:
         odd_sum += nums[i]
         count += 1
 
-print(f"{even_sum} {(odd_sum/count):.1f}")
+print(f"{even_sum} {odd_sum/count:.1f}")
