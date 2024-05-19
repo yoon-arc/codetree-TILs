@@ -12,4 +12,4 @@ for i in range(1, len(nums)):
         odd_sum += nums[i]
         count += 1
 
-print(f"{even_sum} {odd_sum/count}")
+print(f"{even_sum} {(odd_sum/count):.1f}")
