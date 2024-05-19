@@ -11,4 +11,4 @@ for i in nums:
         count += 1
 
 
-print(sumUp, sumUp/count)
+print(sumUp, (sumUp/count):.1f)
