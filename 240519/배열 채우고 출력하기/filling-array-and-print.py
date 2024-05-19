@@ -4,4 +4,4 @@ sumUp = 0
 total = num_list[::-1]
 
 for i in total:
-    print(i, end= ' ')
+    print(i, end= '')
