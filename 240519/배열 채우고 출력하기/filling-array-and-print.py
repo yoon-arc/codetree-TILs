@@ -1,4 +1,4 @@
-num_list = list(map(int, input().split()))
+num_list = list(input().split())
 sumUp = 0
 
 total = num_list[::-1]
