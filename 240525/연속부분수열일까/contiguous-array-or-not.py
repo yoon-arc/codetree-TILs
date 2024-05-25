@@ -13,14 +13,6 @@ while len(new_list) != len(n2):
     new_list.pop()
 
 
-                                # for i in new_list:
-                                #     if i not in n2:
-                                #         print("No")
-                                #         break
-
-                                #     else:
-
-
 if new_list == n2:
     print("Yes")
 
