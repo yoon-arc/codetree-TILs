@@ -10,20 +10,17 @@ for i in range(num1):
         check[i] = True
 
 
-length = 0
 
 for i in range(num1):
     if check[i] == False:
         new_list = []
-        length = 0
-        continue
         
-    if check[i] == True:
-        length += 1
+    else:
         new_list.append(n1[i])
-        if length == len(n2) and new_list == n2:
+        if new_list == n2:
             print("Yes")
             break
 
-if length != len(n2):
+
+if new_list != n2:
     print("No")
