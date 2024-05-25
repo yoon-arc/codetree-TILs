@@ -1,23 +1,26 @@
 num1, num2 = map(int, input().split())
 n1 = list(map(int, input().split()))
 n2 = list(map(int, input().split()))
+check = [False for _ in range(num1)]
 new_list = []
 
 
-for i in n2:
-    if i in n1:
-        start = n1.index(i)
-        new_list += n1[start:len(n2)+2]
-        break
 
-# len이 같아질 때 까지 append?
+for i in range(num1):
+    if n1[i] in n2:
+        new_list.append(n1[i])
+        check[i] = True
 
-# while len(new_list) != len(n2):
-#     new_list.pop()
+length = 0
+for i in check:
+    if i == False:
+        length = 0
+    if i == True:
+        length += 1
+        if length == len(n2):
+            print("Yes")
+            break
 
 
-if new_list == n2:
-    print("Yes")
-
-else:
+if length != len(n2):
     print("No")
