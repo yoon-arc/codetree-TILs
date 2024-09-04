@@ -1,5 +1,5 @@
 import sys
-a = map(int, input().split())
+a = map(int, sys.stdin.readline().split())
 minNum = sys.maxsize
 
 for i in a :
