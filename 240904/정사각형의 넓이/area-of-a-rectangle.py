@@ -2,5 +2,5 @@ num = int(input())
 n = num * num
 
 print(n)
-if (n < 5):
+if (num < 5):
     print("tiny")
