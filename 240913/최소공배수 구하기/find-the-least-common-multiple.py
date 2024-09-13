@@ -8,11 +8,9 @@ def gcd(n,m):
     return max(gcdList)
 
 gcd = gcd(n,m)
-
+# 각 수를 최대공약수로 나눈 다음에, 2x3x6
 def lcd(n,m):
-    lcdList = []
-    lcdList.append(n*gcd)
-    lcdList.append(m*gcd)
-    return min(lcdList)/2
+    lcd = gcd * (n//gcd) * (m//gcd)
+    return lcd
 
-print(f"{lcd(n,m):.0f}")
+print(lcd(n,m))
