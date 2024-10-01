@@ -1,8 +1,6 @@
-total = 0
 def getSum(n):
-    global total 
-    for i in range(n, 0, -2):
-        total += i
-    return total
+    if n <= 0:
+        return 0
+    return n+getSum(n-2)
 n = int(input())
 print(getSum(n))
