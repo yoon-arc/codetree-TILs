@@ -5,13 +5,14 @@ def gcd(a,b):
         return a
     else:
         return gcd(b, a%b)
+        
 def lcm(a,b):
     return (a*b)//gcd(a,b)
-# def lcm(a,b):
+
 
 N = int(input())
 nList= list(map(int, input().split()))
-nList.sort()
+
 now = lcm(nList[0],nList[1])
 
 for i in range(2,len(nList)):
