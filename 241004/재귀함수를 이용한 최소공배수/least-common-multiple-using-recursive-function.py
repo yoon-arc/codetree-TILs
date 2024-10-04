@@ -13,9 +13,12 @@ def lcm(a,b):
 N = int(input())
 nList= list(map(int, input().split()))
 
-now = lcm(nList[0],nList[1])
-
-for i in range(2,len(nList)):
-    now = lcm(now,nList[i])
-
+if len(nList) == 1:
+    now = nList[0]
+else:
+    now = lcm(nList[0],nList[1])
+    
+    for i in range(2,len(nList)):
+        now = lcm(now,nList[i])
+    
 print(now)
