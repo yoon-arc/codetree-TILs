@@ -7,8 +7,6 @@ for _ in range(int(n)):
 wordList.sort()
 answer = []
 for i in wordList:
-    if T in i:
-        # print(i)
+    if i[:len(T)] == T:
         answer.append(i)
-# print(answer)
 print(answer[int(k)-1])
