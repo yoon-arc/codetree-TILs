@@ -5,7 +5,7 @@ minu = 11
 total = 0
 
 while True:
-    if b < 11 or c < 11:
+    if a< 11 and b < 11 and c < 11:
         print(-1)
         break
     if day == a and hour == b and minu == c:
