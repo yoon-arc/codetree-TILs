@@ -10,7 +10,6 @@ elif m1 == m2 and d1> d2:
     getDay = 7-(d1 - d2)
 else:
     getDay = ((months[m1] - d1) + sum(months[m1+1:m2]) + d2)
-    print(f"{sum(months[m1+1:m2])}")
     
 getDay %= 7
 
