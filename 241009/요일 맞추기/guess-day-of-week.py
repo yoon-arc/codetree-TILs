@@ -4,10 +4,13 @@ days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','Sun']
 
 if  m1 > m2:
     getDay = ((months[m2] - d2) + sum(months[m2+1:m1]) + d1)
-elif m1 == m2 and d1 >= d2:
-    getDay = (d2-d1)%7
+elif m1 == m2 and d2>= d1:
+    getDay = d2 - d1
+elif m1 == m2 and d1> d2:
+    getDay = 7-(d1 - d2)
 else:
     getDay = ((months[m1] - d1) + sum(months[m1+1:m2]) + d2)
+    print(f"{sum(months[m1+1:m2])}")
     
 getDay %= 7
 
