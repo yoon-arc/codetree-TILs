@@ -13,7 +13,7 @@ def changeNum(c):
     nums = []
     while c >= b:
         now = c%b
-        c = c//2
+        c = c//b
         nums.append(now)
         
     nums.append(c)
