@@ -11,4 +11,4 @@ def getNum(n):
 if B == 4:
     getNum(N)
 else:
-    print(oct(N))
+    print(oct(N)[2:])
