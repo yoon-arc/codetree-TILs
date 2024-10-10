@@ -1,11 +1,14 @@
-N, B = input().split()
-B = int(B)
-N = int(N)
-result = ""
+N, B = map(int, input().split())
 
-# N을 B진수로 변환
-while N > 0:
-    result = str(N % B) + result
-    N //= B
-
-print(result)
+def getNum(n):
+    num = []
+    while n >= 4:
+        num.append(n%4)
+        n//=4
+    num.append(n)
+    return print(*num[::-1], sep="")
+    
+if B == 4:
+    getNum(N)
+else:
+    print(oct(N))
