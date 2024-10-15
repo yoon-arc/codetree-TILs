@@ -1,7 +1,15 @@
+# 두번 이상 지나간 영역의 크기 출력
+# [2, L] -> 왼쪽으로 2만큼 이동
+# [5, R] -> 오른쪽으로 5만큼 이동
+# 2번 이상 지나간 구간을 모두 출력
+# 앞선 인덱스의 
+
+# 최소 모두 10씩 더해야함!! OFFSET
+
 n = int(input())
-counts = [0]*111
+counts = [0]*1000
 moves = [input().split() for _ in range(n)]
-location = 10
+location = 500
 
 for i in moves:
     if i[1] == 'R':
