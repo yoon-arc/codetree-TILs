@@ -1,8 +1,8 @@
 offset = 1000
 total = 2001
 checked = [[0]* total for _ in range(total)]
-first = tuple(map(int, input().split()))
-sec = tuple(map(int, input().split()))
+first = tuple(map(lambda x : x + offset, map(int, input().split())))
+sec = tuple(map(lambda x : x+offset, map(int, input().split())))
 
 for i in range(first[0], first[2]):
     for j in range(first[1], first[3]):
