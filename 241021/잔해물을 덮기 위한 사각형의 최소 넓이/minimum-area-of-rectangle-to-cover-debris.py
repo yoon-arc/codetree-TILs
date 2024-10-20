@@ -7,11 +7,14 @@ sec = tuple(map(lambda x : x + offset, map(int, input().split())))
 for i in range(first[0], first[2]):
     for j in range(first[1], first[3]):
         checked[i][j] = '1'
+# print(checked)
+
 
 for i in range(sec[0], sec[2]):
     for j in range(sec[1], sec[3]):
-        if (first[0] <= i < first[2]) and (first[1] <= j < first[3]):
+        if (first[0] < i < first[2]) and (first[1] < j < first[3]):
             checked[i][j] = 'y'
+# print(checked)
 
 length = 0
 height = 0
@@ -22,4 +25,7 @@ for i in range(total):
         length = long
     if '1' in checked[i]:
         height += 1
+    # for j in range(total):
+    #     if checked[i][j].count('1') == length:
+    #         sumUp += 1
 print(length*height)
