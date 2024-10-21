@@ -9,7 +9,11 @@ for i in range(len(nums)-1):
     else:
         getMax.append(cnt)
         cnt = 1
-    
+
+# print(getMax)
 getMax.append(cnt)
 
-print(max(getMax))
+if max(getMax) == 1:
+    print(0)
+else:
+    print(max(getMax))
