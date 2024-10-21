@@ -4,7 +4,7 @@ cnt = 1
 getMax = []
 
 for i in range(len(nums)-1):
-    if nums[i] < nums[i+1] and nums[i]>3:
+    if nums[i] < nums[i+1] and nums[i]>t:
         cnt += 1
     else:
         getMax.append(cnt)
