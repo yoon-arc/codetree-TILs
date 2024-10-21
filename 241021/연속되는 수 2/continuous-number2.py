@@ -8,4 +8,5 @@ for i in range(1,len(nums)):
         cnt = 1
     else:
         cnt += 1
+maxNum.append(cnt)
 print(max(maxNum))
