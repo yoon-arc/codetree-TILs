@@ -2,16 +2,16 @@ N, M = map(int, input().split())
 A = []
 B = []
 def getA(n):
-    now = 0
     for i in range(n):
+        now = 0
         v,t = map(int, input().split())
         for i in range(1,t+1):
             now += (v*i)
             A.append(now)
             
 def getB(n):
-    now = 0
     for i in range(n):
+        now = 0
         v,t = map(int, input().split())
         for i in range(1,t+1):
             now += (v*i)
@@ -20,10 +20,8 @@ def getB(n):
 
 getA(N)
 getB(M)
-# print(A)
-# print(B)
 now = 0
-change = 1
+change = -1
 for i in range(len(A)):
     if A[i]>B[i] and now!= 'A':
         change += 1
