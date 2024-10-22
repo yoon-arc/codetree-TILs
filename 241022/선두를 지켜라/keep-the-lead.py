@@ -1,34 +1,32 @@
 N, M = map(int, input().split())
 A = []
 B = []
-def getA(n):
-    for i in range(n):
-        now = 0
-        v,t = map(int, input().split())
-        for i in range(1,t+1):
-            now += (v*i)
-            A.append(now)
-            
-def getB(n):
-    for i in range(n):
-        now = 0
-        v,t = map(int, input().split())
-        for i in range(1,t+1):
-            now += (v*i)
-            B.append(now)
+
+def get_P(n,w):
+    for _ in range(n):
+        v,t = map(int, input().split())  
+        for i in range(t):
+            w.append(v)
+
+get_P(N, A)
+get_P(M, B)
 
 
-getA(N)
-getB(M)
+curP_A = 0
+curP_B = 0
+
 now = 0
 change = -1
+
 for i in range(len(A)):
-    if A[i]>B[i] and now!= 'A':
+    curP_A += A[i]
+    curP_B += B[i]
+
+    if curP_A > curP_B and now != 'A':
         change += 1
         now = 'A'
-    elif A[i]<B[i] and now!= 'B':
+    elif curP_B > curP_A and now != 'B':
         change += 1
         now = 'B'
-    else:
-        continue
+        
 print(change)
