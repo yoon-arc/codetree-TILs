@@ -2,44 +2,46 @@ N, M = map(int, input().split())
 A = []
 B = []
 def getA(n):
-    now = 1
+    now = 0
     for i in range(n):
         d,t = input().split()
         t = int(t)
-        if d == 'R':
-            now += t
-        elif d == 'L':
-            now -= t
-        A.append(now)
+        for j in range(t):
+            if d == 'R':
+                now += 1
+                A.append(now)
+            else:
+                now -= 1
+                A.append(now)
 
 def getB(n):
-    now = 1
+    now = 0
     for i in range(n):
         d,t = input().split()
         t = int(t)
-        if d == 'R':
-            now += t
-        elif d == 'L':
-            now -= t
-        B.append(now)
+        for j in range(t):
+            if d == 'R':
+                now += 1
+                B.append(now)
+            else:
+                now -= 1
+                B.append(now)
 
-# def compare (a,b):
-#     if a>=b:
-#         for i 
-#     else:
+
 getA(N)
 getB(M)
-# print(A)
-# print(B)
-answer = 0
-for i in A:
-    if i in B:
-        answer = i
+# print(A, len(A))
+# print(B, len(B))
+ans = 0
+for i in range(len(A)):
+    if A[i] == B[i]:
+        # print(i)
+        ans = i+1
         break
     else:
         continue
 
-if answer:
-    print(answer)
+if ans:
+    print(ans)
 else:
     print(-1)
