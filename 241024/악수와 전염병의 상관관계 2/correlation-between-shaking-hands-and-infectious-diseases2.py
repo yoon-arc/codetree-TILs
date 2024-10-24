@@ -10,10 +10,16 @@ def getInfection(N,K,P,T):
         #K번만큼만의 효력이 있음.
         #지금 x가 몇번째 악수인지를 체크해야할듯
 
-        if developers[x-1] and developers_check[x-1]<2:
+        if developers[x-1] and developers_check[x-1]<K:
             developers[y-1] = 1
             developers_check[x-1] += 1
             developers_check[y-1] += 1
+            
+        elif developers[y-1] and developers_check[y-1]<K:
+            developers[x-1] = 1
+            developers_check[x-1] += 1
+            developers_check[y-1] += 1
+            
             
         
     print(*developers, sep="")
