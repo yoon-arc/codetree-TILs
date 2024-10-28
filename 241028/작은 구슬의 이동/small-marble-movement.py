@@ -10,14 +10,15 @@ dx, dy = dxs[mapper[d]], dys[mapper[d]]
 def in_range(x,y):
     return 1<= x <=n and 1<= y <=n
     
-for _ in range(t+1):# 전체 반복
-    # print("방향",dx,dy)
+for _ in range(t):# 전체 반복
     nx += dy
     ny += dx
 
     if not in_range(nx,ny):
         dx *= -1
         dy *= -1
+        nx += dy
+        ny += dx
 
 
     
