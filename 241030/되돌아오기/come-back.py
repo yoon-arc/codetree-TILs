@@ -8,7 +8,8 @@ dirc = {'E':0, 'S':1, 'W':2, 'N':3}
 y = h = 0
 
 #시간 누적
-now_time = ans = 0
+now_time = 0
+ans = []
 
 #반복문 - 횟수만큼 명령문 반복
 for i in range(N):
@@ -23,11 +24,11 @@ for i in range(N):
         y, h = y+dys[dirc[d]],h+dhs[dirc[d]]
 
         if y == 0 and h == 0:
-            ans = now_time
+            ans.append(now_time)
             break
 
 if ans:
-    print(ans)
+    print(ans[0])
 else:
     print(-1)
 
