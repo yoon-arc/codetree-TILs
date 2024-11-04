@@ -10,13 +10,13 @@ def in_range(h,y):
 #시작 지점 설정 함수, if 문과 else if 4개로 상,우,하,좌 중 어디인지 확인해야함.
 def getStart(N,K):
     if K <= N :
-        return 0, K-1, 'D'
+        return 0, K-1, 2
     elif N < K and K <= N*2:
-        return K-N-1, N-1, 'L'
+        return K-N-1, N-1, 3
     elif N*2 < K and K <= N*3:
-        return  N-1, (N*3) - K, 'U'
+        return  N-1, (N*3) - K, 0
     else:
-        return (N*4)- K, 0 , 'R'
+        return (N*4)- K, 0 , 1
 
 #방향 전환 함수
 def getDirection(d, m):
@@ -46,8 +46,6 @@ h, y, d = getStart(N, K)
 #부딪힌 횟수
 count = 0
 
-nd = commands[d]
-
 #현재 command상 값이랑 방향표 값이랑 차이 살펴보기
 #ex. D인데(2) /를 만나면 시계방향, \를 만나면 반시계 방향
 #ex2. U인데(0) /를 만나면 시계 방향, \를 만나면 반시계 방향
@@ -56,10 +54,10 @@ nd = commands[d]
 
 while True:
     #방향 업데이트
-    nh, ny = h+dhs[nd], y+dys[nd]
+    nh, ny = h+dhs[d], y+dys[d]
     if in_range(nh,ny):
         count += 1  
-        nd = getDirection(nd, grid[h][y])
+        d = getDirection(d, grid[h][y])
         h, y = nh, ny
     else:
         break
