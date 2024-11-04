@@ -16,7 +16,7 @@ def getStart(N,K):
     elif N*2 < K and K <= N*3:
         return  N-1, (N*3) - K, 'U'
     else:
-        return (N*4)- K, 0 , 'L'
+        return (N*4)- K, 0 , 'R'
 
 #방향 전환 함수
 def getDirection(d, m):
