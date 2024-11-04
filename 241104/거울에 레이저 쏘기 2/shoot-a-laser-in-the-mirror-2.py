@@ -5,7 +5,7 @@ K = int(input())
 
 #범위 내 있는지 확인하는 함수
 def in_range(h,y):
-    return 0<= h and h<N and 0<= y and y < N
+    return 0<= h <N and 0<= y < N
 
 #시작 지점 설정 함수, if 문과 else if 4개로 상,우,하,좌 중 어디인지 확인해야함.
 def getStart(N,K):
@@ -20,18 +20,11 @@ def getStart(N,K):
 
 #방향 전환 함수
 def getDirection(d, m):
-    if d % 2 == 0:
-        if m == '/':
-            d =(d+1)%4
-        else:
-            d = (d-1+4)%4
-            
-    elif d % 2 == 1:
-        if m == '/':
-            d = (d-1+4)%4
-        else:
-            d = (d+1)%4
-    return d
+    if m == '/':
+        return (d + 1) % 4 if d % 2 == 0 else (d - 1 + 4) % 4
+    else:  # mirror == '\'
+        return (d - 1 + 4) % 4 if d % 2 == 0 else (d + 1) % 4
+
 
 #방향 바꾸기 쉽게 저장
 commands = {'U':0, 'R':1, 'D': 2, 'L':3}
@@ -55,12 +48,14 @@ count = 0
 while True:
     #방향 업데이트
     nh, ny = h+dhs[d], y+dys[d]
-    if in_range(nh,ny):
-        count += 1  
-        d = getDirection(d, grid[h][y])
-        h, y = nh, ny
-    else:
+
+    if not in_range(nh, ny):
         break
+        
+    d = getDirection(d, grid[h][y])
+    h, y = nh, ny
+    count += 1  
+
         
     # #방향 업데이트
     # d = getDirection(d, grid[h][y])
