@@ -20,14 +20,14 @@ alp = 65
 #2, N*M+1만큼 반복
 for i in range(N*M):
     #다시 A부터 반복할 수 있게
-    if alp > 91:
-        alp = 65
     nh, ny = h+dhs[d],y+dys[d]
     if not in_range(nh,ny) or check[nh][ny] != 0:
         d = (d+1)%4
     check[h][y] = chr(alp)
     h, y = h+dhs[d],y+dys[d]
     alp += 1
+    if alp > 90:
+        alp = 65
 
 
 for i in check:
