@@ -22,10 +22,10 @@ def in_range(h,y):
 
 #for문
 for i in range(n*n,1,-1):
+    check[h][y] = i
     nh, ny = h+dhs[d], y+dys[d]
     if not in_range(nh,ny) or check[nh][ny] != 0:
         d = (d+1)%4
-    check[h][y] = i
     h, y = h+dhs[d], y+dys[d]
 
 #출력
