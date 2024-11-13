@@ -1,5 +1,6 @@
+import sys
 #값을 입력받기
-cases = list(input())
+cases = list(sys.stdin.readline())
 #총 경우의 수를 모두 카운트 할 변수
 count = 0
 
