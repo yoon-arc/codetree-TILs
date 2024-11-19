@@ -1,7 +1,7 @@
 N = list(input())
 
 if len(N) == 1:
-    print(N[0])
+    print(0)
 else:
     for i in range(len(N)):
         if N[i] != '1':
