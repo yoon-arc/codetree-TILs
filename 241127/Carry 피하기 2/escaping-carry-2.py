@@ -10,7 +10,7 @@ def cal_sum(a,b,c):
     a,b,c = str(a).zfill(max_len), str(b).zfill(max_len), str(c).zfill(max_len)
     #기본 세팅 값
     carry = False
-    total_sum = 0
+    total_sum = -1
     
     for x,y,z in zip(a,b,c):
         if int(x) + int(y) + int(z) >= 10:
