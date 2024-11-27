@@ -4,11 +4,12 @@
 
 braces = list(input())
 count = 0
-#첫 번째 반복문 '(','('를 찾기 위한
-for i in range(len(braces)):
-    if braces[i] == '('and braces[i+1] == '(':
-        for j in range(i+3,len(braces)):
-            if braces[j-1] == ')'and braces[j] == ')':
-                count += 1
+
+#첫 번째 반복문 '('를 찾기 위한
+for i in range(len(braces)-1):
+    #시작 점을 기준으로 하나하나씩 둘러보기
+    for j in range(i+1, len(braces)-1):
+        if braces[i] == '(' and braces[i+1] == '(' and braces[j]==')'and braces[j+1]==')':
+            count += 1
 
 print(count)
