@@ -5,9 +5,9 @@
 braces = list(input())
 count = 0
 #첫 번째 반복문 '(','('를 찾기 위한
-for i in range(len(braces)):
-    if braces[i] == '('and braces[i+1] == '(':
-        for j in range(i+2,len(braces)):
+for i in range(1,len(braces)):
+    if braces[i-1] == '('and braces[i] == '(':
+        for j in range(i+3,len(braces)):
             if braces[j-1] == ')'and braces[j] == ')':
                 count += 1
 
